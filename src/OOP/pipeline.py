@@ -1,3 +1,4 @@
+#%%
 from os import write
 from task_definitions import FetchYFTask, WriteToDatabaseTask
 from prefect import Flow, task
@@ -10,3 +11,6 @@ with Flow("etl-pipeline") as flow:
     write_to_db = write_task(data)
 
 flow.run()
+
+#%%
+flow.visualize()
